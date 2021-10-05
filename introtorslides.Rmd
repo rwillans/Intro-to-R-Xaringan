@@ -23,8 +23,6 @@ options(htmltools.dir.version = FALSE)
 
 Ok, thank you for the invitation to talk to you this week about the language R. I do know some of you but if you have not had the dubious pleasure of meeting me before.....
 
-<
-
 Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:R_logo.svg)
 
 ---
@@ -147,6 +145,8 @@ As much of the R user base comes to it from academic or analysis, there’s lots
 These can sometimes extend to the frivoulous, including the beepr package that will give you a soundtrack to celebrate when your script runs successfully, and the fortunes package which generates funny fortune cookie style quotes from R help forums.
 
 ---
+exclude: true
+
 # RStudio IDE
 
 - Most R users will use the [RStudio IDE](https://www.rstudio.com/)
