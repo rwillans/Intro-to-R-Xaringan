@@ -211,7 +211,7 @@ After you’ve got results for that, you can use R to generate graphics, which a
 
 ???
 
-So if that’s piqued your interest
+Hopefully that’s piqued your interest a little bit to learn more, so I've included a few resources for you on this slide
 
 Perfectly possible to self-teach yourself R from free resources, largely just a google search away. 
 
