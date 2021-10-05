@@ -56,7 +56,7 @@ Being a Data Scientist means I know just enough to be dangerous in about 3 progr
 
 For today, rather than talking through specific bits of syntax or ‘how to write a function’ in R, I’m just going to run through a bit of a general overview. Hope that’s what everyone was expecting, but if need be we can do another session at a later date to cover more. 
 
-I'm going to talk a little bit about R's origins, how it differs from other languages, notably python, which is the other language that tends to be used as a statistical programming language. I'll talk a bit about the extensive amount of code libraries that are out there, which in R-speak are called packages. I'll cover the RStudio IDE, a bit about R's place in  analysis pipelines, and a few pointers on future learning resources. I'll then finish up with a couple of examples of things I’ve done in R @ NICE. 
+I'm going to talk a little bit about R's origins, how it compares to other languages, notably python, which is the other language that tends to be used as a statistical programming language. I'll talk a bit about the extensive amount of code libraries that are out there, which in R-speak are called packages. I'll talk a little bit about R's place in  analysis pipelines, talk though a few pointers on  learning resources, and finish up with a couple of examples of things I’ve done in R @ NICE. 
 
 So firstly, where did R come from.....
 
@@ -128,10 +128,7 @@ We’re now at a point where if someone develops a popular library in R for data
   - fortunes (generates fortune cookie messages from R help forums)
 
 ```{r echo=TRUE}
-library(fortunes)
-
-fortune(192)
-
+fortunes::fortune(192)
 ```
 
 ???
@@ -165,12 +162,14 @@ If you’re happy with Visual Studio you might want to give that a go first, but
 ---
 # R in the data analysis pipeline
 
-  Data -> 'Carpentry' -> Analysis -> Outputs
+  Data -> Analysis -> Outputs
 
 - 'Big' data best manipulated in query language or database
+
 - R (mostly) comes in at the analysis stage
   - Machine learning
   - Statistical Analysis
+  
 - Output
   - Visualisations 
   - Compiled document
@@ -180,13 +179,15 @@ If you’re happy with Visual Studio you might want to give that a go first, but
 
 ???
 
-So in an analysis pipeline you’d use SQL or similar query language for the heavy lifting work getting data out of a database, then ideally leaving R or Python to run your statistical analysis, exporting results and data visualisations. You might end up doing some data carpentry or manipulation in R, which is fine, as long as the data source can be loaded into memory on the workstation you're running R on.
+So how might you typically use R in an analysis pipeline?
 
-Once you have your data, it’ll be stored in a dataframe object, equivalent to a python pandas dataframe, or database table. This gives your data a bit of structure, names each column etc so you can run operations on particular columns and rows using simpler syntax. You have the 
+So in an analysis pipeline you’d use SQL or similar query language for the heavy lifting work getting data out of a database, then ideally leaving R or Python to run your statistical analysis, exporting results and data visualisations. 
+
+Once you have your data, it’ll be stored in a dataframe object, equivalent to a python pandas dataframe, or database table. This gives your data a bit of structure, names each column etc so you can run operations on particular columns and rows using simpler syntax. You might end up doing some data carpentry or manipulation in R, which is fine, as long as the data source can be loaded into memory on the workstation you're running R on.
 
 After that, you can use R to do what it does best, which is analysis. Base R has a *lot* of statistical functions baked in, there are numerous extension packages, including all the standard machine learning algorithms, text analysis, regression packages for various model building, etc. etc. These can be used to develop models to explain or predict various phenomena, categorise data points into particular buckets according to their properties, generate summary statistics, forecast things into the future, etc.
 
-After you’ve got results for that, you can use R to generate graphics, which are really good. The BBC use R for their website graphics for instance. You can also use R to create word documents, pdfs or HTML pages using RMarkdown, create an online slide deck like this. You can also use the R Shiny framework to create a web app or dashboard as a front-end for the analysis. Or you can just run off a flat file of results or feed results to a downstream service, dependent on what you want to get out.
+After you’ve got results for that, you can use R to generate graphics, which are really good. For instance, the BBC use R for their website graphics. You can also use R to create pdfs, word documents or HTML pages. You can even create an online slide deck like this. You can also use the R Shiny framework to create a web app or dashboard as a front-end for the analysis. Or you can just run off a flat file of results or feed results to a downstream service, dependent on what you want to get out.
 
 
 ---
