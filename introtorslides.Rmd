@@ -21,6 +21,10 @@ options(htmltools.dir.version = FALSE)
 
 ???
 
+Ok, thank you for the invitation to talk to you this week about the language R. I do know some of you but if you have not had the dubious pleasure of meeting me before.....
+
+<
+
 Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:R_logo.svg)
 
 ---
@@ -32,8 +36,8 @@ Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:R_logo
 
 ???
 
-For those who don’t know me, my name’s Rob and I work in the Data and Analytics Team as a Data Scientist.
-Being a Data Scientist means I know just enough to be dangerous in about 3 programming languages, SQL, Python and R. And the language that I know most about and use most about is R, which I’ll be talking about today.
+My name’s Rob and I work in the Data and Analytics Team as a Data Scientist.
+Being a Data Scientist means I know just enough to be dangerous in about 3 programming languages, SQL, Python and the language that I know most about and use most which is R, which I’ll be talking about today.
 
 ---
 # In the session today...
@@ -54,9 +58,11 @@ Being a Data Scientist means I know just enough to be dangerous in about 3 progr
 
 ???
 
-For today, rather than talking through specific bits of syntax or ‘how to write a function’ in R, I’m just going to run through a bit of a general overview about what R tends to be used for, how it differs from other languages, and a couple of example use case of things I’ve done in R @ NICE. Hope that’s what everyone was expecting, but if need be we can do sessions on basic syntax at a later date.
+For today, rather than talking through specific bits of syntax or ‘how to write a function’ in R, I’m just going to run through a bit of a general overview. Hope that’s what everyone was expecting, but if need be we can do another session at a later date to cover more. 
 
-Will talk about R's origins and usage as a programming language, how it differs 
+I'm going to talk a little bit about R's origins, how it differs from other languages, notably python, which is the other language that tends to be used as a statistical programming language. I'll talk a bit about the extensive amount of code libraries that are out there, which in R-speak are called packages. I'll cover the RStudio IDE, a bit about R's place in  analysis pipelines, and a few pointers on future learning resources. I'll then finish up with a couple of examples of things I’ve done in R @ NICE. 
+
+So firstly, where did R come from.....
 
 ---
 # R as a programming language
@@ -69,11 +75,11 @@ Will talk about R's origins and usage as a programming language, how it differs
 
 ???
 
-R was created in New Zealand, in the University of Auckland in the 90s. It is however based on the language ‘S’, which is a language created at Bell Labs in the 70s. So in some respects, it is quite an old language, though popularised relatively recently.
+R was created in New Zealand, in the University of Auckland in the 90s. It is however based on the language ‘S’, which is a language created at Bell Labs in the 70s. So in some respects, R is quite an old language, though popularised relatively recently.
 
-R has come to prominence as a language for statistical programming. It’s tending to replace languages like MATLAB / STATA as a tool for analysis, though it can be used as a general programming language and basic web development through extensions like R Shiny, which is a framework for developing web dashboards, R Markdown, which can be used to generate HTML and other documents, and other packages.
+R has come to prominence as a language for statistical programming. It’s tending to replace languages like MATLAB / STATA as a tool for analysis, though it can be used as a more general programming language with various extensions.
 
-Because R’s origins lie S, and S is quite an old language, R is more of a functional than an object orientated language. R does have several object-orientated systems, but a lot of these are either under-the-hood, or are used for advanced programming. For most users (myself included), they’d stick to a predominantly functional paradigm, so in that respect it’s a bit easier for people not familiar with object-orientated systems to learn. 
+R is more of a functional than an object orientated language. R does have several object-orientated systems, but a lot of these are either under-the-hood, or are used for advanced programming. For most users (myself included), they’d stick to a predominantly functional paradigm, so in that respect it’s a bit easier for people not familiar with object-orientated systems to learn. 
 
 ---
 # R as a programming language(2)
@@ -86,17 +92,16 @@ Because R’s origins lie S, and S is quite an old language, R is more of a func
     
 * Idiosyncrasies
   - Vectorised by default
-    - Loops are therefore (by convention) rarely used
+  - Loops are therefore (by convention) rarely used
   - Can be memory intensive
   - 'Base R' functions (by convention) often superseded by 'tidyverse' library equivalents
-  - Lots of pipes
 
 
 ???
 
 R is predominantly used as a 'statistical programming' language, so mainly used for analysis, and statistical or machine learning tasks. It can be used for more general use cases, and over recent years there are extensions and frameworks that mean that it can be used for some web development or publishing tasks, interact with other languages and APIs, and be more of a general programming language.
 
-There are few quirks to the language, for example most operations are vectorised by default, so you’ll almost never write a loop in the same way you would do with other general programming languages. R can be notoriously memory-intensive so can be slow in environments where there’s not a lot of memory. Some of the base R functions are practically eschewed by a very influential set of libraries called the ‘tidyverse’, so in practice you’re often better starting with the tidyverse then learning the basic functions, which feels a bit roundabout, but in many cases the tidyverse equivalent functions are faster, have easier syntax, and will be recognised by more people. Because R code is functional, you end up ‘piping’ a lot of steps by passing objects through lots of functions to get to your output. This is analogous to method chaining in object orientated languages, but is *probably* used more in R than other languages
+There are few quirks to the language, for example most operations are vectorised by default, so you’ll almost never write a loop in the same way you would do with other general programming languages. R can be notoriously memory-intensive so can be slow in environments where there’s not a lot of memory. Some of the base R functions are practically eschewed by a very influential set of libraries called the ‘tidyverse’, so in practice you’re often better starting with the tidyverse then learning the basic functions, which feels a bit roundabout, but in many cases the tidyverse equivalent functions are faster, have easier syntax, and will be recognised by more people. 
 
 ---
 # R Vs Python
@@ -109,7 +114,9 @@ There are few quirks to the language, for example most operations are vectorised
 
 ???
 
-Being a more general programming language, Python doesn’t have the native support for statistics that R does, but various extensions and python libraries have meant the distinction between the two is a bit moot or based on preference. Similarly, historically R didn’t have any web app frameworks, or a lot of integration possibilities with other languages, but people have developed libraries for R which have expanded it’s reach too. 
+R is Often mentioned alongside Python for data science purposes. Data Scientists will therefore tend to come in two flavours, those that prefer R and those that prefer Python. Usually that just corresponds to which language you learnt first. 
+
+Originally, the two languages would have had differences, Python being a general programming language that people developed statistical libraries for, whereas R was a more statistically focussed language that has acquired libraries and frameworks that make it a more general programming languages. So the languages have sort of met in the middle, and in terms of capabilities are much more equal than they would have once done.
 
 We’re now at a point where if someone develops a popular library in R for data work, someone will develop an equivalent library in Python, and vice versa. There are niche cases where you might prefer one or the other, but generally speaking for most data work (not general programming or web development) the languages are interchangeable. 
 
@@ -133,11 +140,11 @@ fortune(192)
 
 ???
 
-R has a very active user group, which means that there is a really extensive set of code libraries continually under development, for a lot of different needs. This means that even those new to R can often find a package with wrapper functions or implementations of complex tasks that mean the user just needs to run a single function to accomplish what they need to do.
+R still has a slight advantage I think, in that R has a very active user group. The user group  means that there is a really extensive set of code libraries continually under development, for a lot of different needs. This means that even those new to R can often find a package with wrapper functions or implementations of complex tasks that mean the user just needs to run a single function to accomplish what they need to do.
 
 As much of the R user base comes to it from academic or analysis, there’s lots of packages for particular statistical analyses, econometrics and the like. If there’s a specialised function or field, like econometrics / epidemiology / evidence synthesis, chances are that someone has already developed an r package to conduct those sorts of specialist analysis.
 
-These can sometimes extend to the frivoulous, including the beepr package that will give you a soundtrack to celebrate when your script runs successfully, and the fortunes package which generates funny fortune cookie style quotes from R help forums. There used to be one which made a call to the Uber API to get a taxi, but that's now defunct.
+These can sometimes extend to the frivoulous, including the beepr package that will give you a soundtrack to celebrate when your script runs successfully, and the fortunes package which generates funny fortune cookie style quotes from R help forums.
 
 ---
 # RStudio IDE
@@ -152,7 +159,9 @@ These can sometimes extend to the frivoulous, including the beepr package that w
 
 ???
 
-You can use R with Visual Studio or another IDE, but most users will use the dedicated RStudio IDE. That works really well with R, as you’d expect, as that’s what it was designed to do primarily, and has the standard features you want from an IDE, nice GIT integration, etc. I personally don’t really like how Visual Studio does R, but then again I write everything in RStudio, so I would say that wouldn’t I. If you’re happy with Visual Studio you might want to give that a go first, but if you’re starting with no experience with R then I’d recommend trying RStudio as an IDE. You can write python really well in RStudio now as well, and it does have support for other languages. Because Rstudio are one of the few people in the R ecosystem with a chargeable product and consequent income stream, they're fairly dominant.
+You can use R with Visual Studio or another IDE, but most users will use the dedicated RStudio IDE. That works really well with R, as you’d expect, as that’s what it was designed to do primarily, and has the standard features you want from an IDE, nice GIT integration, etc. I personally don’t really like how Visual Studio does R, but then again I write everything in RStudio, so I would say that wouldn’t I. 
+
+If you’re happy with Visual Studio you might want to give that a go first, but if you’re starting with no experience with R then I’d recommend trying RStudio as an IDE. You can write python really well in RStudio now as well, and it does have support for other languages. Because Rstudio are one of the few people in the R ecosystem with a chargeable product and consequent income stream, they're fairly dominant.
 
 
 ---
@@ -162,8 +171,6 @@ You can use R with Visual Studio or another IDE, but most users will use the ded
 
 - 'Big' data best manipulated in query language or database
 - R (mostly) comes in at the analysis stage
-- Data stored in 'dataframe' object
-- Run your analysis (whatever that is)
   - Machine learning
   - Statistical Analysis
 - Output
@@ -175,18 +182,13 @@ You can use R with Visual Studio or another IDE, but most users will use the ded
 
 ???
 
-So typically, you’re going to see R used by analysts or data scientists, rather than as a general programming language, though it can be used as such.
-In an analysis pipeline you’d use SQL or similar query language for the heavy lifting work getting data out of a database, then ideally leaving R or Python to run your statistical analysis, exporting results and data visualisations. You might end up doing some data carpentry or manipulation in R, which is fine, as long as the data source can be loaded into memory on the workstation you're running R on.
-
-R has really nice packages to connect to databases and pass query language into them to get results out. Dbplyr is a nice package for this. Alternatively, R can read data in a variety of flat file and proprietary formats, including csv, excel files, STATA files, (RIS is a bit tricky :) ) 
+So in an analysis pipeline you’d use SQL or similar query language for the heavy lifting work getting data out of a database, then ideally leaving R or Python to run your statistical analysis, exporting results and data visualisations. You might end up doing some data carpentry or manipulation in R, which is fine, as long as the data source can be loaded into memory on the workstation you're running R on.
 
 Once you have your data, it’ll be stored in a dataframe object, equivalent to a python pandas dataframe, or database table. This gives your data a bit of structure, names each column etc so you can run operations on particular columns and rows using simpler syntax. You have the 
 
-Then there’s the inglorious but necessary task of filtering, cleaning, aggregating, or otherwise manipulating your data into the format you need it for visualisation or analysis. Typically that’s done using a package called dplyr, which offers a relatively intuiative syntax where each step in the analysis is a ‘verb’ function. It’s also possible to do things equivalent to relational joins in dplyr, though of course if you can do these in the database back end, it’s often better, as R will load everything into memory so for really large tables it can start to complain. 
-
 After that, you can use R to do what it does best, which is analysis. Base R has a *lot* of statistical functions baked in, there are numerous extension packages, including all the standard machine learning algorithms, text analysis, regression packages for various model building, etc. etc. These can be used to develop models to explain or predict various phenomena, categorise data points into particular buckets according to their properties, generate summary statistics, forecast things into the future, etc.
 
-After you’ve got results for that, you can use R to generate graphics using a package called ggplot2. This package is used by the BBC for their graphics. You can also use R to create word documents, pdfs or HTML pages using RMarkdown, create an online slide deck like this using a package called xaringen. And you can also use R Shiny to create a web app or dashboard as a front-end for the analysis. Or you can just run off a flat file of results, dependent on what you want to get out.
+After you’ve got results for that, you can use R to generate graphics, which are really good. The BBC use R for their website graphics for instance. You can also use R to create word documents, pdfs or HTML pages using RMarkdown, create an online slide deck like this. You can also use the R Shiny framework to create a web app or dashboard as a front-end for the analysis. Or you can just run off a flat file of results or feed results to a downstream service, dependent on what you want to get out.
 
 
 ---
@@ -212,7 +214,10 @@ After you’ve got results for that, you can use R to generate graphics using a 
 ???
 
 So if that’s piqued your interest
-Perfectly possible to self-teach yourself R from free resources, largely just a google search away. There are some relatively cheap paid web courses out there as well that do a reasonable job of curating a syllabus and presenting it well, like Dataquest.io, linkedin learning, and I’m sure there’s good stuff on Udemy or pluralsight as well. The constraint you have is really just finding time to learn it.
+
+Perfectly possible to self-teach yourself R from free resources, largely just a google search away. 
+
+If you like structured online courses, there are some relatively cheap paid web courses out there as well that do a reasonable job of curating a syllabus and presenting it well, like Dataquest.io, linkedin learning, and I’m sure there’s good stuff on Udemy or pluralsight as well. There will also be free courses on coursera and edX with similar content. The constraint you have is really just finding time to learn it.
 
 I’ve done two little intro sessions through the python club, which you can access through the links below.
 
@@ -234,9 +239,15 @@ I'll keep these notes up in case you want to look at the links later
 
 I'll just close with a bit of a show and tell of a couple of things I've used R for at NICE. So the two things that have seen the most use at NICE are the covid pre-print scraper, and the trialtracker dashboard. I’ll talk a little bit about each to demonstrate what’s possible with R
 
-The pre-print scraper is a lovely little example of use of R to solve a small problem. Prior to this, Information Services had to manually page through the covid collection preprints on medrxiv and biorxiv, the search capabilities of the website weren’t great, and at the time of implementation we were all running round with a lot of demands on people’s time, getting the rapid covid guidelines underway. So to save people’s time manually searching for and downloading citations, I wrote a little script to make the process a little easier.
-The script itself is about 100 lines of code that queries the medrxiv/biorxiv covid API every morning at 8am, returns the most recent 500 records in json format, (more than enough for one day), reformats it into a RIS file, then emails the file out to interested parties in IS via a mandrill service.
+The pre-print scraper is a lovely little example of use of R to solve a small problem. Prior to this, At the time, Information Services had to manually page through the covid collection preprints on medrxiv and biorxiv, the search capabilities of the website weren’t great, and at the time of implementation we were all running round with a lot of demands on people’s time, getting the rapid covid guidelines underway. So to save people’s time manually searching for and downloading citations, I wrote a little script to make the process a little easier.
+
+The script itself is about 100 lines of code that queries the medrxiv/biorxiv covid API every morning at 8am, returns the most recent 500 records in json format, (more than enough for one day), reformats it into a RIS file, then emails the file out to interested parties in IS via a mandrill service [show emails].
 What that means is that IS can upload the file daily into a maintained EPPI database of preprints, and use the much better search capabilities in EPPI rather than having to use the website and spending hours clicking back and forth, downloading citations one at a time. 
+
 I think this is a nice little example showing how R can be used for web scraping and general programming use. There’s no analysis done here (though there could be), and it’s a nice automation tool which can make use of APIs at either end as a link in the chain for a data pipeline.
-The other major thing I’ve written in R that might be of interest is the trialtracker dashboard. Some of you have probably seen this before, but if not, this is a dashboard and email alert system which summarises information from various trial registries, all in one place. Rather than manually checking websites once a month to see if a particular trial has reported, here I’m querying registry APIs for trials that we’re interested in tracking. The script keeps a local copy of information in a SQLite database and then flagging either when changes are noted, or when a pubmed search indicates a publication. There are email alerts for that too, and the whole thing also has an R Shiny dashboard front end [ip restricted to within VMWare though]
+
+The other major thing I’ve written in R that might be of interest is the trialtracker dashboard. Some of you have probably seen this before, but if not, this is a dashboard and email alert system which summarises information from various trial registries, all in one place. Rather than manually checking websites once a month to see if a particular trial has reported, the script queries registry APIs for trials that we’re interested in tracking. The script keeps a local copy of information in a SQLite database and then flagging either when changes are noted, or when a pubmed search indicates a publication. There are email alerts for that too, and the whole thing also has an R Shiny dashboard front end [ip restricted to within VMWare though]
+
 Aside from that, I’ve done some text analysis using social media data, which R can do fairly well, and I’m currently using R (and Python) in a more traditional research project looking at investigating the prevalence of long covid and patterns of diagnosis across the uk with a primary care records provider. 
+
+Will stop here as I'm running out of time, so if anyone wants to ask questions, fire away.
