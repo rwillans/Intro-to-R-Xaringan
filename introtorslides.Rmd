@@ -73,7 +73,7 @@ R was created in New Zealand, in the University of Auckland in the 90s. It is ho
 
 R has come to prominence as a language for statistical programming. It’s tending to replace languages like MATLAB / STATA as a tool for analysis, though it can be used as a general programming language and basic web development through extensions like R Shiny, which is a framework for developing web dashboards, R Markdown, which can be used to generate HTML and other documents, and other packages.
 
-Because R’s origins lie in statistical programming or analysis, and S is quite an old language, R is more of a functional than an object orientated language. R does have several object-orientated systems, but a lot of these are either under-the-hood, or are used for advanced programming. For most users (myself included), they’d stick to a predominantly functional paradigm, so in that respect it’s a bit easier for people not familiar with object-orientated systems to learn. 
+Because R’s origins lie in S, and S is quite an old language, R is more of a functional than an object orientated language. R does have several object-orientated systems, but a lot of these are either under-the-hood, or are used for advanced programming. For most users (myself included), they’d stick to a predominantly functional paradigm, so in that respect it’s a bit easier for people not familiar with object-orientated systems to learn. 
 
 ---
 # R as a programming language(2)
@@ -93,6 +93,8 @@ Because R’s origins lie in statistical programming or analysis, and S is quite
 
 
 ???
+
+R is predominantly used as a 'statistical programming' language, so mainly used for analysis, and statistical or machine learning tasks. It can be used for more general use cases, and over recent years there are extensions and frameworks that mean that it can be used for some web development or publishing tasks, interact with other languages and APIs, and be more of a general programming language.
 
 There are few quirks to the language, for example most operations are vectorised by default, so you’ll almost never write a loop in the same way you would do with other general programming languages. R can be notoriously memory-intensive so can be slow in environments where there’s not a lot of memory. Some of the base R functions are practically eschewed by a very influential set of libraries called the ‘tidyverse’, so in practice you’re often better starting with the tidyverse then learning the basic functions, which feels a bit roundabout, but in many cases the tidyverse equivalent functions are faster, have easier syntax, and will be recognised by more people. Because R code is functional, you end up ‘piping’ a lot of steps by passing objects through lots of functions to get to your output. This is analogous to method chaining in object orientated languages, but is *probably* used more in R than other languages
 
