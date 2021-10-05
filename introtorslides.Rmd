@@ -46,8 +46,6 @@ Being a Data Scientist means I know just enough to be dangerous in about 3 progr
 
 * R Packages
 
-* The RStudio IDE
-
 * R in the data analysis pipeline
 
 * Learning Resources
